@@ -60,7 +60,7 @@ def main():
                 if shot.collides_with(asteroid):
                     asteroid.split()
                     shot.kill()
-                    point = asteroid.radius * 10
+                    point += asteroid.radius * 10
                     break
 
         #limit framrate to 60 fps

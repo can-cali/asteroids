@@ -3,6 +3,7 @@ from player import Player
 from constants import *
 from asteroid import Asteroid
 from asteroidfield import AsteroidField
+from shot import Shot
 
 def main():
     pygame.init()
@@ -25,6 +26,9 @@ def main():
 
     AsteroidField.containers = updatable
     asteroid_field = AsteroidField()
+
+    shots = pygame.sprite.Group()
+    Shot.containers = updatable, drawable, shots
 
     while True:
         for event in pygame.event.get():

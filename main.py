@@ -41,6 +41,12 @@ def main():
 
         pygame.display.flip()
 
+        #check for collisions
+        for asteroid in asteroids:
+            if player.collides_with(asteroid):
+                print("Game Over!")
+                exit()
+
         #limit framrate to 60 fps
         dt = fps.tick(60) / 1000
         

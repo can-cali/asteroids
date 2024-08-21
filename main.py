@@ -14,6 +14,7 @@ def main():
 
     fps = pygame.time.Clock()
     dt = 0
+    point = 0
 
     updatable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
@@ -49,7 +50,18 @@ def main():
         for asteroid in asteroids:
             if player.collides_with(asteroid):
                 print("Game Over!")
+                print(f"Final Score: {point}")
                 exit()
+        
+        #check for collisions between shots and asteroids
+        #if a collision is detected, destroy both objects
+        for shot in shots:
+            for asteroid in asteroids:
+                if shot.collides_with(asteroid):
+                    asteroid.kill()
+                    shot.kill()
+                    point = asteroid.radius * 10
+                    break
 
         #limit framrate to 60 fps
         dt = fps.tick(60) / 1000

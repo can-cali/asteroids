@@ -2,7 +2,7 @@
 
 The project made by assistance of boot.dev guided project. 
 
-# Point system added by myself.
+ Point system added by myself.
 
 Possible future features:
 - Implement multiple lives and respawning
